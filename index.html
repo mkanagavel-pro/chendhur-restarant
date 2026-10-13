@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chenthur Restaurant | Authentic South Indian Dining | Tharamangalam, Salem</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFF8EF',
+                        darkCharcoal: '#1A1A1A',
+                        accentOrange: '#F47721',
+                        deepOrange: '#C94F13',
+                        warmGrey: '#716B65',
+                        warmBeige: '#E9DED2'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #FFF8EF;
+            color: #1A1A1A;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(233, 222, 210, 0.9);
+        }
+
+        .glass-dark {
+            background: rgba(26, 26, 26, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        /* 3D Perspective Card Effect */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.2s ease;
+            will-change: transform;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .video-glow {
+            box-shadow: 0 0 40px -10px rgba(244, 119, 33, 0.35);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#F47721] selection:text-white">
+
+    <div class="bg-[#1A1A1A] text-amber-100/90 text-xs py-2 px-4 text-center flex items-center justify-between max-w-7xl mx-auto rounded-b-lg">
+        <div class="flex items-center gap-2 mx-auto sm:mx-0">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Open Today: 11:00 AM – 11:00 PM (Outer Bay-Bass, Tharamangalam)</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-4 text-xs text-amber-200/80">
+            <span>Salem, Tamil Nadu</span>
+            <span>•</span>
+            <a href="tel:+917200800879" class="hover:text-white font-semibold transition-colors">+91 72008 00879</a>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 transition-all duration-300 glass-card border-b border-warmBeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#home" class="flex flex-col group">
+                <div class="flex items-center gap-2">
+                    <span class="font-extrabold text-2xl sm:text-3xl tracking-tight text-darkCharcoal group-hover:text-accentOrange transition-colors font-serif">
+                        CHENTHUR
+                    </span>
+                    <span class="bg-accentOrange/10 text-deepOrange text-[10px] font-bold px-2 py-0.5 rounded-full border border-accentOrange/20">
+                        SALEM
+                    </span>
+                </div>
+                <span class="text-xs tracking-widest text-warmGrey uppercase font-medium">RESTAURANT</span>
+            </a>
+
+            <!-- Desktop Smooth Navigation -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-warmGrey">
+                <a href="#home" class="hover:text-accentOrange transition-colors py-1 border-b-2 border-transparent hover:border-accentOrange">Home</a>
+                <a href="#food-prep" class="hover:text-accentOrange transition-colors py-1 border-b-2 border-transparent hover:border-accentOrange">Live Cooking</a>
+                <a href="#menu" class="hover:text-accentOrange transition-colors py-1 border-b-2 border-transparent hover:border-accentOrange">Our Menu</a>
+                <a href="#about" class="hover:text-accentOrange transition-colors py-1 border-b-2 border-transparent hover:border-accentOrange">About Us</a>
+                <a href="#gallery" class="hover:text-accentOrange transition-colors py-1 border-b-2 border-transparent hover:border-accentOrange">Gallery</a>
+                <a href="#contact" class="hover:text-accentOrange transition-colors py-1 border-b-2 border-transparent hover:border-accentOrange">Contact</a>
+            </nav>
+
+            <!-- Quick Action Call Button -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="tel:+917200800879" class="inline-flex items-center gap-2 bg-accentOrange hover:bg-deepOrange text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md shadow-accentOrange/20 hover:shadow-lg active:scale-95">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>Call +91 72008 00879</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex md:hidden items-center gap-2">
+                <a href="tel:+917200800879" class="p-2 bg-accentOrange/10 text-deepOrange rounded-lg hover:bg-accentOrange hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                </a>
+                <button id="menu-toggle" class="p-2 rounded-lg text-darkCharcoal hover:bg-stone-200/50 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-warmBeige px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#home" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-darkCharcoal hover:bg-cream hover:text-accentOrange">Home</a>
+            <a href="#food-prep" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-darkCharcoal hover:bg-cream hover:text-accentOrange">Live Cooking Video</a>
+            <a href="#menu" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-darkCharcoal hover:bg-cream hover:text-accentOrange">Our Menu</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-darkCharcoal hover:bg-cream hover:text-accentOrange">About Us</a>
+            <a href="#gallery" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-darkCharcoal hover:bg-cream hover:text-accentOrange">Gallery</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-darkCharcoal hover:bg-cream hover:text-accentOrange">Contact</a>
+            
+            <a href="tel:+917200800879" class="w-full text-center flex items-center justify-center gap-2 bg-accentOrange text-white py-3 rounded-xl font-semibold shadow-md active:scale-98">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                <span>Call +91 72008 00879</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-10 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Banner -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-amber-100/80 border border-amber-200 text-deepOrange px-3.5 py-1.5 rounded-full text-xs font-semibold">
+                        <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+                        <span>Sizzling South Indian Delicacies Prepared Fresh Daily</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darkCharcoal tracking-tight leading-tight font-serif">
+                        Aroma of Tradition. <br class="hidden sm:inline" />
+                        <span class="text-accentOrange italic font-serif">Taste of Perfection.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-warmGrey max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Welcome to <strong class="text-darkCharcoal font-semibold">Chenthur Restaurant</strong> in Outer Bay-Bass, Tharamangalam, Salem. Enjoy authentic South Indian meals, delicious Biryanis, and rich gravy starters prepared fresh daily.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#food-prep" class="w-full sm:w-auto px-8 py-4 bg-accentOrange hover:bg-deepOrange text-white font-bold rounded-2xl shadow-lg shadow-accentOrange/25 hover:shadow-xl transition-all duration-200 text-center flex items-center justify-center gap-2 group">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            <span>Watch Live Cooking</span>
+                        </a>
+
+                        <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-stone-50 border-2 border-warmBeige text-darkCharcoal font-bold rounded-2xl shadow-sm transition-all duration-200 text-center flex items-center justify-center gap-2 hover:border-accentOrange">
+                            <i data-lucide="utensils" class="w-5 h-5 text-accentOrange"></i>
+                            <span>Explore Menu</span>
+                        </a>
+                    </div>
+
+                    <!-- Information Badges -->
+                    <div class="pt-6 border-t border-warmBeige grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
+                        <div class="glass-card p-3.5 rounded-2xl">
+                            <p class="text-[11px] text-warmGrey font-medium uppercase tracking-wider">Cuisine</p>
+                            <p class="text-sm font-bold text-darkCharcoal flex items-center gap-1.5 mt-0.5">
+                                <i data-lucide="chef-hat" class="w-4 h-4 text-accentOrange"></i>
+                                <span>Authentic Indian</span>
+                            </p>
+                        </div>
+
+                        <div class="glass-card p-3.5 rounded-2xl">
+                            <p class="text-[11px] text-warmGrey font-medium uppercase tracking-wider">Location</p>
+                            <p class="text-sm font-bold text-darkCharcoal flex items-center gap-1.5 mt-0.5">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-accentOrange"></i>
+                                <span>Tharamangalam, Salem</span>
+                            </p>
+                        </div>
+
+                        <div class="col-span-2 sm:col-span-1 glass-card p-3.5 rounded-2xl">
+                            <p class="text-[11px] text-warmGrey font-medium uppercase tracking-wider">Avg. Cost</p>
+                            <p class="text-sm font-bold text-darkCharcoal flex items-center gap-1.5 mt-0.5">
+                                <span class="text-accentOrange font-extrabold">₹</span>
+                                <span>₹200–₹400 / person</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive 3D Image Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            
+                            <div class="space-y-3 sm:space-y-4">
+                                <div class="tilt-card overflow-hidden rounded-2xl shadow-xl border-2 border-white aspect-4/5 group cursor-pointer bg-stone-100">
+                                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800" alt="Hot South Indian Dosa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImageError(this, 'Special Dosa')">
+                                </div>
+                                <div class="tilt-card overflow-hidden rounded-2xl shadow-xl border-2 border-white aspect-square group cursor-pointer bg-stone-100">
+                                    <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&q=80&w=800" alt="Sizzling Paneer Curry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImageError(this, 'Paneer Starter')">
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 sm:space-y-4 pt-6">
+                                <div class="tilt-card overflow-hidden rounded-2xl shadow-xl border-2 border-white aspect-square group cursor-pointer bg-stone-100">
+                                    <img src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=800" alt="South Indian Meal Prep" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImageError(this, 'Thali Special')">
+                                </div>
+                                <div class="tilt-card overflow-hidden rounded-2xl shadow-xl border-2 border-white aspect-4/5 group cursor-pointer bg-stone-100">
+                                    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800" alt="Chettinad Spicy Gravy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImageError(this, 'Chettinad Curry')">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Floating Live Status Badge -->
+                        <div class="absolute -bottom-4 -left-4 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="p-2 bg-amber-100 rounded-xl text-deepOrange">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-warmGrey font-medium">Google Maps Listing</p>
+                                <p class="text-sm font-bold text-darkCharcoal">Open Daily till 11:00 PM</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="food-prep" class="py-20 bg-darkCharcoal text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest bg-stone-800 px-3.5 py-1.5 rounded-full border border-stone-700 inline-flex items-center gap-1.5">
+                    <i data-lucide="video" class="w-3.5 h-3.5 text-accentOrange"></i>
+                    <span>Live Kitchen Experience</span>
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-serif tracking-tight">
+                    Watch Our Food Preparation
+                </h2>
+                <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                    Experience the sizzle of fresh spices, fragrant curry leaves, and rich dum biryani cooked in traditional South Indian style.
+                </p>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden video-glow border-2 border-stone-700 bg-black aspect-video sm:aspect-21/9 shadow-2xl">
+                
+                <!-- HTML5 Looping Food Video -->
+                <video 
+                    id="cooking-video"
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline 
+                    poster="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1200"
+                    class="w-full h-full object-cover">
+                    <source src="./assets/chenthur-live-kitchen.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video playback.
+                </video>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
+
+                <!-- Floating Video Overlay Bar -->
+                <div class="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-none">
+                    <div class="glass-dark p-4 rounded-2xl border border-white/10 max-w-md">
+                        <div class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                            <span>Live Kitchen Video</span>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-white mt-1">Fresh Spices & Cooking in Progress</h3>
+                        <p class="text-xs text-stone-300 mt-1">Prepared hot and fresh upon every order at Chenthur Restaurant.</p>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="pointer-events-auto flex items-center gap-3">
+                        <button id="toggle-video-sound" class="p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition border border-white/20 flex items-center justify-center">
+                            <i data-lucide="volume-x" id="volume-icon" class="w-5 h-5"></i>
+                        </button>
+                        <a href="tel:+917200800879" class="px-5 py-3 bg-accentOrange hover:bg-deepOrange text-white text-xs font-bold rounded-xl shadow-lg transition flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>Order Live Food</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="menu" class="py-16 bg-white border-y border-warmBeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-deepOrange font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                    Menu Preview
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darkCharcoal mt-3 font-serif">
+                    Explore Our Delicious Menu
+                </h2>
+                <p class="text-warmGrey mt-2 text-sm sm:text-base">
+                    Discover freshly prepared South Indian, Biryani, and regional curry dishes.
+                </p>
+            </div>
+
+            <!-- Confirmation Disclaimer -->
+            <div class="bg-amber-50 border-l-4 border-accentOrange p-4 rounded-r-xl mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="info" class="w-5 h-5 text-deepOrange shrink-0 mt-0.5"></i>
+                    <div>
+                        <p class="text-xs sm:text-sm text-darkCharcoal font-semibold">
+                            Note on Menu & Daily Availability:
+                        </p>
+                        <p class="text-xs text-warmGrey mt-0.5">
+                            Menu items and prices are updated regularly. Please call <a href="tel:+917200800879" class="underline font-bold text-deepOrange">+91 72008 00879</a> directly to confirm today's live specials.
+                        </p>
+                    </div>
+                </div>
+                <a href="tel:+917200800879" class="px-4 py-2 bg-accentOrange text-white text-xs font-bold rounded-lg shrink-0 hover:bg-deepOrange transition">
+                    Call to Order
+                </a>
+            </div>
+
+            <!-- Filter Controls & Search -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+                <div id="category-filters" class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 no-scrollbar">
+                    <button data-category="All" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-accentOrange text-white shadow-md">All Items</button>
+                    <button data-category="Starters" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cream text-warmGrey hover:bg-stone-200/60 border border-warmBeige">Starters</button>
+                    <button data-category="Chicken" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cream text-warmGrey hover:bg-stone-200/60 border border-warmBeige">Chicken</button>
+                    <button data-category="Main Course" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cream text-warmGrey hover:bg-stone-200/60 border border-warmBeige">Main Course</button>
+                    <button data-category="Rice & Biryani" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cream text-warmGrey hover:bg-stone-200/60 border border-warmBeige">Rice & Biryani</button>
+                    <button data-category="Beverages" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cream text-warmGrey hover:bg-stone-200/60 border border-warmBeige">Beverages</button>
+                </div>
+
+                <div class="relative w-full md:w-64 shrink-0">
+                    <i data-lucide="search" class="w-4 h-4 text-warmGrey absolute left-3 top-1/2 -translate-y-1/2"></i>
+                    <input type="text" id="menu-search" placeholder="Search dishes..." class="w-full pl-9 pr-4 py-2 text-xs sm:text-sm bg-cream border border-warmBeige rounded-xl focus:outline-none focus:ring-2 focus:ring-accentOrange/50">
+                </div>
+            </div>
+
+            <!-- Dynamic Menu Grid Container -->
+            <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Items populated by JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="relative tilt-card">
+                        <div class="overflow-hidden rounded-3xl border-4 border-white shadow-xl aspect-4/3 sm:aspect-square bg-stone-100">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200" alt="Chenthur Restaurant Dining Space" class="w-full h-full object-cover" onerror="handleImageError(this, 'Dining Space')">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-deepOrange font-bold text-xs uppercase tracking-widest bg-amber-100/60 px-3 py-1 rounded-full border border-amber-200">
+                        Hospitality & Taste
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-darkCharcoal font-serif leading-tight">
+                        Authentic Regional Flavors in Tharamangalam
+                    </h2>
+                    
+                    <p class="text-base text-warmGrey leading-relaxed">
+                        <strong class="text-darkCharcoal font-semibold">Chenthur Restaurant</strong> is a top dining spot located at Outer Bay-Bass in Tharamangalam, Salem. We specialize in bringing traditional South Indian dishes, delicious biryanis, and aromatic gravies prepared daily.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-accentOrange shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-darkCharcoal">Prime Tharamangalam Location</h4>
+                                <p class="text-xs text-warmGrey">Outer Bay-Bass, Tharamangalam, Salem, Tamil Nadu 636502.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-accentOrange shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-darkCharcoal">Affordable Family Meal Spend</h4>
+                                <p class="text-xs text-warmGrey">Meals ranging ₹200–₹400 per person according to Google Maps listing.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-accentOrange shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-darkCharcoal">Daily Timings</h4>
+                                <p class="text-xs text-warmGrey">Open throughout the day, closing at 11:00 PM every night.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-16 bg-white border-t border-warmBeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-deepOrange font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                    Visual Gallery
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darkCharcoal mt-3 font-serif">
+                    Culinary Gallery
+                </h2>
+                <p class="text-warmGrey mt-2 text-sm sm:text-base">
+                    Click any image to view in full resolution lightbox mode.
+                </p>
+            </div>
+
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery populated by JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-deepOrange font-bold text-xs uppercase tracking-widest bg-amber-100/60 px-3 py-1 rounded-full border border-amber-200">
+                            Visit or Order
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-darkCharcoal mt-3 font-serif">
+                            Contact & Directions
+                        </h2>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl space-y-5">
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-accentOrange/10 text-deepOrange rounded-xl shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-warmGrey">Address</h3>
+                                <p class="text-sm font-semibold text-darkCharcoal mt-0.5">
+                                    Outer Bay-Bass, Tharamangalam, Salem, Tamil Nadu 636502
+                                </p>
+                                <p class="text-xs text-stone-500 mt-1">
+                                    Plus Code: <span class="font-mono bg-stone-100 px-1.5 py-0.5 rounded text-[11px]">MXRH+H9 Salem, Tamil Nadu</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pt-4 border-t border-warmBeige">
+                            <div class="p-3 bg-accentOrange/10 text-deepOrange rounded-xl shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-warmGrey">Phone Number</h3>
+                                <a href="tel:+917200800879" class="text-base font-bold text-accentOrange hover:underline mt-0.5 block">
+                                    +91 72008 00879
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pt-4 border-t border-warmBeige">
+                            <div class="p-3 bg-accentOrange/10 text-deepOrange rounded-xl shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-warmGrey">Hours</h3>
+                                <p class="text-sm font-semibold text-darkCharcoal mt-0.5">
+                                    Open Daily until 11:00 PM
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="tel:+917200800879" class="flex-1 py-3.5 px-4 bg-accentOrange hover:bg-deepOrange text-white font-bold rounded-xl text-center text-sm shadow-md flex items-center justify-center gap-2 transition">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>Call Restaurant</span>
+                        </a>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Chenthur+Restaurant+Outer+Bay-Bass+Tharamangalam+Salem+Tamil+Nadu+636502" target="_blank" rel="noopener noreferrer" class="flex-1 py-3.5 px-4 bg-white hover:bg-stone-50 border border-warmBeige text-darkCharcoal font-bold rounded-xl text-center text-sm flex items-center justify-center gap-2 transition">
+                            <i data-lucide="external-link" class="w-4 h-4 text-accentOrange"></i>
+                            <span>Google Maps Directions</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Google Maps Embed Container -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-4 rounded-3xl space-y-4">
+                        <div class="relative w-full h-[380px] rounded-2xl overflow-hidden bg-stone-100 flex flex-col items-center justify-center text-center p-6 border border-stone-200">
+                            <div class="p-4 bg-amber-100 rounded-full text-deepOrange mb-3">
+                                <i data-lucide="compass" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-darkCharcoal">Google Maps Navigation</h3>
+                            <p class="text-xs text-warmGrey max-w-md mt-1 mb-4">
+                                Click below to start live turn-by-turn navigation directly to <strong>Chenthur Restaurant, Outer Bay-Bass, Tharamangalam</strong>.
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Chenthur+Restaurant+Outer+Bay-Bass+Tharamangalam+Salem+Tamil+Nadu+636502" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-darkCharcoal hover:bg-black text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-md">
+                                <span>Open Google Maps</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-accentOrange"></i>
+                            </a>
+
+                            <div class="absolute bottom-3 left-3 right-3 glass-dark text-stone-200 p-2.5 rounded-xl text-[11px] flex items-center justify-between">
+                                <span>Verified Business Location</span>
+                                <span class="font-semibold text-amber-300">Outer Bay-Bass, Tharamangalam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-darkCharcoal text-stone-300 pt-16 pb-12 border-t-4 border-accentOrange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="font-serif text-2xl font-bold text-white tracking-wide">CHENTHUR</span>
+                        <span class="text-[10px] bg-accentOrange text-white px-1.5 py-0.5 rounded font-bold">SALEM</span>
+                    </div>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Authentic Indian restaurant offering delicious regional dishes, biryanis, and traditional curries at Outer Bay-Bass, Tharamangalam, Salem.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-accentOrange transition">Home</a></li>
+                        <li><a href="#food-prep" class="hover:text-accentOrange transition">Live Cooking Video</a></li>
+                        <li><a href="#menu" class="hover:text-accentOrange transition">Our Menu</a></li>
+                        <li><a href="#about" class="hover:text-accentOrange transition">About Us</a></li>
+                        <li><a href="#gallery" class="hover:text-accentOrange transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-accentOrange transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Contact Info</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-accentOrange shrink-0 mt-0.5"></i>
+                            <span>Outer Bay-Bass, Tharamangalam, Salem, Tamil Nadu 636502</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-accentOrange shrink-0"></i>
+                            <a href="tel:+917200800879" class="hover:text-white font-bold">+91 72008 00879</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Cost Estimate</h4>
+                    <span class="text-xs text-amber-300 bg-stone-800 px-3 py-1.5 rounded-lg border border-stone-700 block text-center font-semibold">
+                        ₹200–₹400 per person
+                    </span>
+                    <p class="text-[11px] text-stone-500 mt-2">
+                        Closes daily at 11:00 PM.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+                <p>© <span id="year"></span> Chenthur Restaurant. All rights reserved.</p>
+                <p>Website created for <span class="text-amber-400 font-bold">Chenthur Restaurant, Tharamangalam</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-stone-900 rounded-3xl overflow-hidden border border-stone-800 shadow-2xl">
+            <button id="lightbox-close" class="absolute top-4 right-4 z-10 p-2 bg-black/60 hover:bg-black text-white rounded-full transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="max-h-[75vh] overflow-hidden bg-black flex items-center justify-center">
+                <img id="lightbox-img" src="" alt="" class="max-h-[75vh] w-auto object-contain">
+            </div>
+            <div class="p-6 bg-stone-900 text-white border-t border-stone-800">
+                <h3 id="lightbox-title" class="text-xl font-bold font-serif text-amber-400"></h3>
+                <p id="lightbox-desc" class="text-xs text-stone-300 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // High-reliability Fallback SVG Image Generator (No broken image icons ever)
+        function generateFoodFallbackSVG(title) {
+            const encodedTitle = encodeURIComponent(title || 'Chenthur Dish');
+            return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23FFF8EF"/><rect x="40" y="40" width="720" height="520" rx="30" fill="%23F47721" fill-opacity="0.1" stroke="%23E9DED2" stroke-width="4"/><circle cx="400" cy="260" r="120" fill="%23C94F13" fill-opacity="0.85"/><circle cx="400" cy="260" r="95" fill="%23FFF8EF"/><path d="M360 260 C 380 220, 420 220, 440 260 C 420 300, 380 300, 360 260 Z" fill="%23F47721"/><text x="400" y="440" font-family="sans-serif" font-size="28" font-weight="bold" fill="%231A1A1A" text-anchor="middle">${encodedTitle}</text><text x="400" y="480" font-family="sans-serif" font-size="18" fill="%23716B65" text-anchor="middle">Chenthur Restaurant • Fresh Daily</text></svg>`;
+        }
+
+        function handleImageError(imgElement, title) {
+            imgElement.onerror = null; // prevent infinite loops
+            imgElement.src = generateFoodFallbackSVG(title);
+        }
+
+        // Video Sound Controls
+        const video = document.getElementById('cooking-video');
+        const soundBtn = document.getElementById('toggle-video-sound');
+        const volumeIcon = document.getElementById('volume-icon');
+
+        soundBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (video.muted) {
+                volumeIcon.setAttribute('data-lucide', 'volume-x');
+            } else {
+                volumeIcon.setAttribute('data-lucide', 'volume-2');
+            }
+            lucide.createIcons();
+        });
+
+        // Menu Data with High Reliability Unsplash Image Links
+        const MENU_ITEMS = [
+            { id: 1, name: 'Special Chicken Biryani', category: 'Rice & Biryani', desc: 'Aromatic basmati rice cooked with tender chicken and fragrant spices.', price: 'Price on Call', isVeg: false, img: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=800' },
+            { id: 2, name: 'South Indian Thali Meal', category: 'Main Course', desc: 'Wholesome traditional meal served with rice, sambar, rasam, and sides.', price: 'Price on Call', isVeg: true, img: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=800' },
+            { id: 3, name: 'Crispy Paneer 65', category: 'Starters', desc: 'Spiced paneer cubes tossed in curry leaves and red chilli masala.', price: 'Price on Call', isVeg: true, img: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&q=80&w=800' },
+            { id: 4, name: 'Chettinad Pepper Chicken', category: 'Chicken', desc: 'Tender chicken pieces fried with crushed pepper and roasted spices.', price: 'Price on Call', isVeg: false, img: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800' },
+            { id: 5, name: 'Butter Naan & Rich Gravy', category: 'Main Course', desc: 'Soft clay-oven baked naan served with rich butter curry.', price: 'Price on Call', isVeg: true, img: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=800' },
+            { id: 6, name: 'Tandoori Chicken Starter', category: 'Starters', desc: 'Char-broiled chicken roasted after yogurt spice marination.', price: 'Price on Call', isVeg: false, img: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&q=80&w=800' },
+            { id: 7, name: 'Chilled Rose Milk', category: 'Beverages', desc: 'Refreshing signature rose flavored sweet milk drink.', price: 'Price on Call', isVeg: true, img: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=800' },
+            { id: 8, name: 'Crispy Ghee Roast Dosa', category: 'Main Course', desc: 'Golden roasted crepe drizzled with pure desi ghee.', price: 'Price on Call', isVeg: true, img: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800' }
+        ];
+
+        const GALLERY_ITEMS = [
+            { url: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=1200', title: 'Crispy South Indian Dosa', desc: 'Freshly roasted on the griddle.' },
+            { url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=1200', title: 'Steaming Dum Biryani', desc: 'Slow dum cooked with secret spices.' },
+            { url: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=1200', title: 'Hot Evening Starters', desc: 'Crispy fritters prepared fresh.' },
+            { url: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=1200', title: 'Thali Meals Spread', desc: 'Served with authentic South Indian sides.' },
+            { url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200', title: 'Welcoming Dining Area', desc: 'Spacious setup for family gatherings.' },
+            { url: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1200', title: 'Clean Dining Ambience', desc: 'Hygiene and comfortable dining environment.' }
+        ];
+
+        // Mobile Drawer Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Render Filterable & Searchable Menu
+        const menuGrid = document.getElementById('menu-grid');
+        let currentCategory = 'All';
+        let currentSearch = '';
+
+        function renderMenu() {
+            menuGrid.innerHTML = '';
+            const filtered = MENU_ITEMS.filter(item => {
+                const matchCat = currentCategory === 'All' || item.category === currentCategory;
+                const matchSearch = item.name.toLowerCase().includes(currentSearch.toLowerCase()) || 
+                                    item.desc.toLowerCase().includes(currentSearch.toLowerCase());
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                menuGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-cream rounded-2xl border border-dashed border-warmBeige">
+                        <p class="text-base font-semibold text-darkCharcoal">No dishes match your search</p>
+                        <p class="text-xs text-warmGrey mt-1">Try clearing your filters or searching another keyword.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'tilt-card glass-card rounded-2xl overflow-hidden flex flex-col group';
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden bg-stone-100">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="handleImageError(this, '${item.name.replace(/'/g, "")}')">
+                        <span class="absolute top-3 left-3 bg-white/90 text-[10px] font-extrabold px-2.5 py-1 rounded-full border border-stone-200">
+                            ${item.category}
+                        </span>
+                        <span class="absolute top-3 right-3 w-3.5 h-3.5 rounded-sm border-2 ${item.isVeg ? 'border-green-600 bg-white' : 'border-red-600 bg-white'} flex items-center justify-center">
+                            <span class="w-1.5 h-1.5 rounded-full ${item.isVeg ? 'bg-green-600' : 'bg-red-600'}"></span>
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-base text-darkCharcoal group-hover:text-accentOrange transition-colors">${item.name}</h3>
+                            <p class="text-xs text-warmGrey mt-1.5 leading-relaxed">${item.desc}</p>
+                        </div>
+                        <div class="pt-3 border-t border-warmBeige flex items-center justify-between">
+                            <span class="text-[11px] font-medium text-deepOrange bg-amber-50 px-2 py-0.5 rounded border border-amber-200">${item.price}</span>
+                            <a href="tel:+917200800879" class="text-xs font-semibold text-accentOrange hover:underline">Confirm Call</a>
+                        </div>
+                    </div>
+                `;
+                menuGrid.appendChild(card);
+            });
+            
+            init3DTilt();
+        }
+
+        // Category Filter Event Listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.className = 'filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cream text-warmGrey hover:bg-stone-200/60 border border-warmBeige';
+                });
+                e.target.className = 'filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-accentOrange text-white shadow-md';
+                currentCategory = e.target.getAttribute('data-category');
+                renderMenu();
+            });
+        });
+
+        // Search Input Event
+        document.getElementById('menu-search').addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderMenu();
+        });
+
+        // Render Gallery Grid
+        const galleryGrid = document.getElementById('gallery-grid');
+        GALLERY_ITEMS.forEach(item => {
+            const gDiv = document.createElement('div');
+            gDiv.className = 'tilt-card group relative h-64 rounded-2xl overflow-hidden cursor-pointer border border-warmBeige shadow-sm bg-stone-100';
+            gDiv.innerHTML = `
+                <img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="handleImageError(this, '${item.title.replace(/'/g, "")}')">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+                    <p class="font-bold text-base font-serif">${item.title}</p>
+                    <p class="text-xs text-stone-300 mt-1">${item.desc}</p>
+                </div>
+            `;
+            gDiv.addEventListener('click', () => {
+                document.getElementById('lightbox-img').src = item.url;
+                document.getElementById('lightbox-title').textContent = item.title;
+                document.getElementById('lightbox-desc').textContent = item.desc;
+                document.getElementById('lightbox').classList.remove('hidden');
+                document.getElementById('lightbox').classList.add('flex');
+            });
+            galleryGrid.appendChild(gDiv);
+        });
+
+        // Lightbox Control
+        document.getElementById('lightbox-close').addEventListener('click', () => {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightbox').classList.remove('flex');
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('lightbox').classList.add('hidden');
+                document.getElementById('lightbox').classList.remove('flex');
+            }
+        });
+
+        // Interactive 3D Perspective Card Tilt Engine
+        function init3DTilt() {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -8;
+                    const rotateY = ((x - centerX) / centerX) * 8;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                });
+            });
+        }
+
+        // Run application
+        renderMenu();
+        init3DTilt();
+    </script>
+</body>
+</html>
