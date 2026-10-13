@@ -80,6 +80,13 @@
         .video-glow {
             box-shadow: 0 0 40px -10px rgba(244, 119, 33, 0.35);
         }
+
+        /* Hide video overlay only on mobile screens */
+        @media (max-width: 639px) {
+            #food-prep .absolute.bottom-6.left-6.right-6 {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
